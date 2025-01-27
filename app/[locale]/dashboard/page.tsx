@@ -1,12 +1,13 @@
 import { auth } from "@/auth";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import UserProfileCard from "./components/UserProfile";
+import { User } from "@/lib/types/user";
+
 
 export default async function Home() {
 	const session = await auth()
 	return (
-		<>
-			<div>hello {session?.user.name}</div>
-			<ThemeSwitcher />
-		</>
+		<div className="p-4">
+      <UserProfileCard user={session?.user as User} />
+    </div>
 	);
 }
