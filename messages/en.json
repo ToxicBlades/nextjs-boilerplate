@@ -1,4 +1,49 @@
 {
+  "Auth":{
+    "Layout":{
+      "metaTitle": "Crm authentication",
+      "metaDescription":"Routes which handles all crm authentication"
+    },
+    "Unathorized": {
+      "metaTitle": "Unauthorized page",
+      "metaDescription": "Please contact the administrator for assistance or check your credentials.",
+      "errors": {
+        "Configuration": {
+          "title": "Configuration Error",
+          "message": "There was an issue with the server configuration. Please check the server settings."
+        },
+        "AccessDenied": {
+          "title": "Access Denied",
+          "message": "Your email address does not match the corporate address of the company. If you believe you need to log in with this address, please wait until it is activated."
+        },
+        "Verification": {
+          "title": "Verification Error",
+          "message": "There was a problem with verification. The authorization token has expired or has already been used."
+        },
+        "Default": {
+          "title": "Unknown Error",
+          "message": "An unexpected error occurred. Please try again later."
+        }
+      },
+      "errorCode": "Error code: {error}",
+      "contactAdmin": "If the issue persists, please contact the administrator.",
+      "returnToLogin": "Return to login page"
+    },
+      "Login": {
+        "metaTitle": "Login - Ses CRM",
+        "metaDescription": "Authenticate and access your Ses CRM account.",
+        "header": {
+          "title": "Create an account",
+          "subtitle": "Enter your email below to create your account"
+        },
+        "termsAndPrivacy": {
+          "terms": "Terms of Service",
+          "and": "and",
+          "policy": "Privacy Policy",
+          "agreement": "By clicking continue, you agree to our"
+        }
+      }
+  },
   "IndexPage":{
     "hello": "welcome to boilerplate"
   }
