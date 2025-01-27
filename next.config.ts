@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const withNextIntl = createNextIntlPlugin();
+const nextConfig : NextConfig = {
+	images: {
+		domains: [
+			"localhost",
+			"res.cloudinary.com",
+			"lh3.googleusercontent.com",
+			"uploadthing.com",
+			"utfs.io",
+		],
+	},
+	swcMinify: true,
+	output: "standalone",
+	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
