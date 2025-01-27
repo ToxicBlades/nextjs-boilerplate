@@ -12,7 +12,6 @@ const nextConfig : NextConfig = {
 			"utfs.io",
 		],
 	},
-	swcMinify: true,
 	output: "standalone",
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
