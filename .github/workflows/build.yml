@@ -1,0 +1,21 @@
+name: Verify Docker Build
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  build-project:
+    runs-on: ubuntu-latest #if its monorepo add like build-project 2 and do same way
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: 'Create .env file'
+      run: | #this needed for next public envs which are created during runtime build
+        echo "${{ secrets.MAIN_ENV }}" > ./.env
+
+    - name: Build SES CRM Docker image
+      run: |
+        docker build -t project ./

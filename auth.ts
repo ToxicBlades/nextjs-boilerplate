@@ -16,6 +16,7 @@ async function signInUser({ user, account }: SignInParams): Promise<boolean> {
 	try {
 
     //In login auth we use api token from env(read about it in /docs/auth.md)
+    //this one will return always true with fake data so comment or change function to test auth
 		const searchRes = await userService.find(
 			{
 				filters: {
@@ -27,7 +28,7 @@ async function signInUser({ user, account }: SignInParams): Promise<boolean> {
 			process.env.STRAPI_API_TOKEN as string,
 		);
 
-		if (searchRes.data) {
+		if (searchRes.data && searchRes.data.length > 0) {
 			return true;
 		}
 
